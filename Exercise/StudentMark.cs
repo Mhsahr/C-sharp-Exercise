@@ -6,6 +6,7 @@ namespace C_sharp_Exercise
 {
     public class student_mark
     {
+        private static IEnumerable<Student> studentList;
 
         public class Student
         {
@@ -27,7 +28,7 @@ namespace C_sharp_Exercise
             int studentNumber = 0;
 
             Console.WriteLine("How many student do you have?");
-            studentNumber = Convert.ToInt32(Console.ReadLine());
+            studentNumber = GettingIntInput();
 
 
 
@@ -40,16 +41,16 @@ namespace C_sharp_Exercise
 
 
                 Console.WriteLine("Enter the first name:");
-                learner.firstName = Console.ReadLine();
+                learner.firstName = GettingStringInput();
 
                 Console.WriteLine(learner.lastName = "Enter the last name:");
-                learner.lastName = Console.ReadLine();
+                learner.lastName = GettingStringInput();
 
                 Console.WriteLine("Enter the score:");
-                learner.score = Convert.ToInt32(Console.ReadLine());
+                learner.score = GettingIntInput();
 
                 Console.WriteLine("Enter the ID:");
-                learner.ID = Convert.ToInt32(Console.ReadLine());
+                learner.ID = GettingIntInput();
 
                 studentList.Add(learner);
 
@@ -65,8 +66,17 @@ namespace C_sharp_Exercise
             {
                 Console.WriteLine(item.score);
             }
-
         }
+        static string GettingStringInput()
+        {
+            return Console.ReadLine();
+        }
+        static int GettingIntInput()
+        {
+            return Convert.ToInt32(Console.ReadLine());
+        }
+
+
     }
 
 }
