@@ -6,60 +6,52 @@ namespace C_sharp_Exercise
 {
     public class student_mark
     {
-        private static IEnumerable<Student> studentList;
-
         public class Student
         {
-            public string firstName;
-            public string lastName;
-            public int score;
-            public int ID;
+            string firstname;
+            string lastname;
+            int score;
+            int ID;
         }
+        
         public class Classroom
         {
             public string teacherName;
-            public string lessonTopic;
-            public string studentNumber;
+            public string classSubject;
+            public int studentNumber;
         }
 
-
-        public static void Run()
+        static void Main(string[] args)
         {
             int studentNumber = 0;
 
-            Console.WriteLine("How many student do you have?");
+            Console.WriteLine("How many student do you have");
             studentNumber = GettingIntInput();
-
-
 
             List<Student> studentList = new List<Student>(studentNumber);
 
-
             while (studentNumber != 0)
             {
-                var learner = new Student();
+                var learner = new Student ();
 
+                Console.WriteLine("firstname?");
+                learner.firstname = GettingStringInput();
 
-                Console.WriteLine("Enter the first name:");
-                learner.firstName = GettingStringInput();
+                Console.WriteLine("lastname?");
+                learner.lastname = GettingStringInput();
 
-                Console.WriteLine(learner.lastName = "Enter the last name:");
-                learner.lastName = GettingStringInput();
-
-                Console.WriteLine("Enter the score:");
+                Console.WriteLine("score");
                 learner.score = GettingIntInput();
 
-                Console.WriteLine("Enter the ID:");
+                Console.WriteLine("ID");
                 learner.ID = GettingIntInput();
 
                 studentList.Add(learner);
 
-
                 studentNumber--;
-
-
             }
-            Console.WriteLine("you can not go through");
+            Console.WriteLine("Stop!");
+
             studentList.Sort((x, y) => x.score.CompareTo(y.score));
 
             foreach (Student item in studentList)
@@ -67,16 +59,15 @@ namespace C_sharp_Exercise
                 Console.WriteLine(item.score);
             }
         }
+
+        static int GettingIntInput ()
+        {
+            return Convert.ToInt32(Console.ReadLine());
+        }
         static string GettingStringInput()
         {
             return Console.ReadLine();
         }
-        static int GettingIntInput()
-        {
-            return Convert.ToInt32(Console.ReadLine());
-        }
-
-
     }
 
 }
