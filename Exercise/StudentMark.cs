@@ -1,73 +1,57 @@
-﻿using System;
+﻿using practice1.StudentMark.Models;
+using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace C_sharp_Exercise
+namespace practice1
 {
-    public class student_mark
+    class Program
     {
-        public class Student
+        static void Run ()
         {
-            string firstname;
-            string lastname;
-            int score;
-            int ID;
-        }
-        
-        public class Classroom
-        {
-            public string teacherName;
-            public string classSubject;
-            public int studentNumber;
-        }
+            int studentCounter = 0;
 
-        static void Main(string[] args)
-        {
-            int studentNumber = 0;
+            Console.WriteLine("How many student do you have?");
+            studentCounter = GettingIntInput();
 
-            Console.WriteLine("How many student do you have");
-            studentNumber = GettingIntInput();
 
-            List<Student> studentList = new List<Student>(studentNumber);
+            var course = new Course();
 
-            while (studentNumber != 0)
+            for (int i = 0; i < studentCounter; i++)
             {
-                var learner = new Student ();
+                Console.WriteLine("Enter the first name:");
+                var fname = GettingStringInput();
 
-                Console.WriteLine("firstname?");
-                learner.firstname = GettingStringInput();
+                Console.WriteLine("Enter the last name:");
+                var lname = GettingStringInput();
 
-                Console.WriteLine("lastname?");
-                learner.lastname = GettingStringInput();
+                Console.WriteLine("Enter the score:");
+                var score = float.Parse(Console.ReadLine());
 
-                Console.WriteLine("score");
-                learner.score = GettingIntInput();
+                Console.WriteLine("Enter the ID:");
+                var id = GettingIntInput();
 
-                Console.WriteLine("ID");
-                learner.ID = GettingIntInput();
+                var student = new Student(id, fname, lname, score);
 
-                studentList.Add(learner);
+                course.Students.Add(student);
 
-                studentNumber--;
             }
-            Console.WriteLine("Stop!");
 
-            studentList.Sort((x, y) => x.score.CompareTo(y.score));
+            Console.WriteLine("It is stopped.");
+            course.Students.Sort((x, y) => x.Score.CompareTo(y.Score));
 
-            foreach (Student item in studentList)
+            foreach (Student item in course.Students)
             {
-                Console.WriteLine(item.score);
+                Console.WriteLine(item.Score);
             }
         }
 
-        static int GettingIntInput ()
-        {
-            return Convert.ToInt32(Console.ReadLine());
-        }
         static string GettingStringInput()
         {
             return Console.ReadLine();
         }
+        static int GettingIntInput()
+        {
+            return Convert.ToInt32(Console.ReadLine());
+        }
     }
-
 }
