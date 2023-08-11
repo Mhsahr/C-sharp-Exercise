@@ -1,11 +1,28 @@
-﻿namespace practice1.StudentMark.Models
+﻿using LINQtoCSV;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSV.Models
 {
+    [Serializable]
     public class Student
     {
-        public int Id;
-        public string Firstname;
-        public string Lastname;
-        public float Score;
+
+
+        [CsvColumn(Name = "ID")]
+        public int ID { get; set; }
+
+        [CsvColumn(Name = "firstname")]
+        public string Firstname { get; set; }
+
+        [CsvColumn(Name = "lastname")]
+        public string Lastname { get; set; }
+
+        [CsvColumn(Name = "score")]
+        public float Score { get; set; }
 
         public Student()
         {
@@ -14,11 +31,13 @@
 
         public Student(int id, string firstname, string lastname, float score)
         {
-            Id = id;
+            ID = id;
             Firstname = firstname;
             Lastname = lastname;
             Score = score;
         }
+        
     }
+
 
 }

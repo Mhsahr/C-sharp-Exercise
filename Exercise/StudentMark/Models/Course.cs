@@ -36,7 +36,7 @@ namespace CSV.Models
             StudentCount = studenCount;
         }
 
-
+       
     }
 
 }
