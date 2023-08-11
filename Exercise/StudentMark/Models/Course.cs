@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace practice1.StudentMark.Models
+namespace CSV.Models
 {
     public class Course
     {
         public string TeacherName { get; set; }
         public string LessonTopic { get; set; }
         public int StudentCount { get; set; }
-
         public List<Student> Students { get; set; }
+        public int Score { get; private set; }
+
 
         public Course()
         {
@@ -25,6 +26,17 @@ namespace practice1.StudentMark.Models
 
             return sum / Students.Count;
         }
+
+
+
+        public Course(string teacherName, string lessonTopic, int studenCount)
+        {
+            TeacherName = teacherName;
+            LessonTopic = lessonTopic;
+            StudentCount = studenCount;
+        }
+
+
     }
 
 }
