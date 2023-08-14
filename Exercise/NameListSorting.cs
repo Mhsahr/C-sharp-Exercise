@@ -4,7 +4,7 @@ using System.Text;
 
 namespace C_sharp_Exercise
 {
-    class nameList_Sorting
+    class NameListSorting
     {
         static List<string> nameList = new List<string>();
 

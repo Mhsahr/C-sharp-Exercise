@@ -5,7 +5,7 @@ namespace StudentMark
 {
     class Program
     {
-        static void Run(string[] args)
+        static void Run()
         {
             Table.MakeTable();
             

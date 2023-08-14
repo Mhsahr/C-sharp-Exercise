@@ -9,7 +9,8 @@ namespace C_sharp_Exercise
             Console.WriteLine("Enter a right number for opening an application " +
                 "1 for minMax " +
                 "2 for name sorting " +
-                "3 for student marks");
+                "3 for student marks" +
+                "4 for student app");
             int number =Convert.ToInt32 (Console.ReadLine());
             if (number == 1)
             {
@@ -18,15 +19,18 @@ namespace C_sharp_Exercise
 
             else if (number == 2)
             {
-                nameList_Sorting.Run();
+                NameListSorting.Run();
             }
 
             else if (number == 3)
             {
-                student_mark.Run();
+                studentMark.Run();
             }
-
-
+             
+            else if (number==4)
+            {
+                studentApp.Run();
+            }
         }
     }
 }

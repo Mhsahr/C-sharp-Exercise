@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace C_sharp_Exercise
 {
-    class minMax
+    class MinMax
     {
         public static void Run()
         { 
