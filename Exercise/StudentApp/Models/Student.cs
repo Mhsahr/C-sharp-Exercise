@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using StudentApp;
+using StudentMark.App;
 
-namespace ConsoleApp4
+namespace ConsoleApp4.Models
 {
     class Student
     {
@@ -12,8 +12,12 @@ namespace ConsoleApp4
         public string Lastname { get; set; }
         public float Score { get; set; }
 
+     
+
+
         public string AsCommaSeparated()
         {
+
             return $"{Id},{Firstname},{Lastname},{Score}";
         }
     }
