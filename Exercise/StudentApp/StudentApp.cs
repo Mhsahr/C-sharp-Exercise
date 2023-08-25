@@ -1,24 +1,19 @@
-﻿using ConsoleApp4.Controllers;
-using System;
+﻿using System;
 
-namespace StudentMark.App
+namespace StudentApp
 {
     class Program
     {
 
+
         static void Main(string[] args)
         {
-            var controller = new ClassController();
+            Console.WriteLine("Welcome to Mahsa Student Management System v2.5.0");
 
-            controller.Run();
+            var menu = new Menu();
+            menu.Run();
 
         }
 
     }
-
-
-
-
-
-
 }

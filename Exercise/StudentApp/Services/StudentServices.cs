@@ -1,12 +1,13 @@
-﻿using ConsoleApp4.Models;
-using System;
+﻿using System;
+using StudentApp.Models;
+using System.Linq;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
-namespace ConsoleApp4.Services
+
+namespace StudentApp.Services
 {
-    class StudentService
+    class StudentServices
     {
         public List<Student> LoadData(string path)
         {
@@ -30,8 +31,8 @@ namespace ConsoleApp4.Services
                         var student = new Student()
                         {
                             Id = id,
-                            Firstname = cols[1],
-                            Lastname = cols[2],
+                            FirstName = cols[1],
+                            LastName = cols[2],
                             Score = score,
 
                         };
@@ -49,8 +50,9 @@ namespace ConsoleApp4.Services
                 throw new InvalidDataException("Couldn't find or parse data");
             }
 
-
         }
+
+       
 
         public void SaveData(string path, List<Student> students)
         {

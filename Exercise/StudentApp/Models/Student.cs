@@ -1,24 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using StudentMark.App;
 
-namespace ConsoleApp4.Models
+namespace StudentApp.Models
 {
-    class Student
+    class Student : Person
     {
-        public int  Id { get; set; }
-        public string Firstname { get; set; }
-        public string Lastname { get; set; }
         public float Score { get; set; }
-
-     
-
 
         public string AsCommaSeparated()
         {
 
-            return $"{Id},{Firstname},{Lastname},{Score}";
+            return $"{Id},{FirstName},{LastName},{Score}";
         }
     }
 }

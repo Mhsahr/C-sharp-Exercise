@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp4.Models
+namespace StudentApp.Models
 {
-    class Class
+    class Course : Person
     {
-        public string TeacherName { get; set; }
         public string LessonTopic { get; set; }
         public int StudentCount { get; set; }
 
@@ -15,8 +14,6 @@ namespace ConsoleApp4.Models
         public void SortByScore()
         {
             Students.Sort((x, y) => x.Score.CompareTo(y.Score));
-
-
         }
     }
 }
