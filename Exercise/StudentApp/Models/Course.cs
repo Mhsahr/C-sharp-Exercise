@@ -9,11 +9,11 @@ namespace StudentApp.Models
         public string LessonTopic { get; set; }
         public int StudentCount { get; set; }
 
-        public List<Student> Students { get; set; }
 
         public void SortByScore()
         {
-            Students.Sort((x, y) => x.Score.CompareTo(y.Score));
+            var students = new Student();
+            students.Students.Sort((x, y) => x.Score.CompareTo(y.Score));
         }
     }
 }

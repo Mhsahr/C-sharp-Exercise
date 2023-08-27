@@ -8,6 +8,9 @@ namespace StudentApp.Models
     {
         public float Score { get; set; }
 
+        public List<Student> Students { get; set; }
+
+
         public string AsCommaSeparated()
         {
 

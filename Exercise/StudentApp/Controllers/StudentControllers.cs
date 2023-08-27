@@ -7,16 +7,18 @@ namespace StudentApp.Controllers
 {
     class StudentControllers
     {
-    public void PrintData(List<Student> data)
-    {
-        Console.WriteLine("ID\tFirstname\tLastname\tScore");
-        Console.WriteLine("---------------------------------------------------------");
-        foreach (var learner in data)
-        {
-            Console.WriteLine($"{learner.Id}\t{learner.FirstName}\t\t{learner.LastName}\t\t{learner.Score}");
-        }
 
-    }
+
+        public void PrintData(List<Student> data)
+        {
+            Console.WriteLine("ID\tFirstname\tLastname\tScore");
+            Console.WriteLine("---------------------------------------------------------");
+            foreach (var learner in data)
+            {
+                Console.WriteLine($"{learner.Id}\t{learner.FirstName}\t\t{learner.LastName}\t\t{learner.Score}");
+            }
+
+        }
 
         public List<Student> GetDataFromUser()
         {
@@ -35,7 +37,44 @@ namespace StudentApp.Controllers
             }
 
             return students;
+        }
+
+        public void Delete(List<Student> row)
+        {
+            int numberId = Convert.ToInt32(StudentUtils.PromptUser("Enter the ID you want to change:"));
+            row.RemoveAt(numberId);
+        }
+
+        public void Edit(List<Student> students)
+        {
+            int numberId = Convert.ToInt32(StudentUtils.PromptUser("Enter the ID you want to change:"));
+            students.RemoveAt(numberId);
+
+
+
+            var id = Convert.ToInt32(StudentUtils.PromptUser("Enter ID: "));
+            var fname = StudentUtils.PromptUser("Enter Firstname: ");
+            var lname = StudentUtils.PromptUser("Enter Lastname: ");
+            var score = float.Parse(StudentUtils.PromptUser("Enter Score: "));
+            var student = new Student() { Id = id, FirstName = fname, LastName = lname, Score = score };
+
+            students.Insert(numberId, student);
 
         }
+
+
+        public void AddData(List<Student> students)
+        {
+
+            var id = Convert.ToInt32(StudentUtils.PromptUser("Enter ID: "));
+            var fname = StudentUtils.PromptUser("Enter Firstname: ");
+            var lname = StudentUtils.PromptUser("Enter Lastname: ");
+            var score = float.Parse(StudentUtils.PromptUser("Enter Score: "));
+            var student = new Student() { Id = id, FirstName = fname, LastName = lname, Score = score };
+            students.Add(student);
+
+        }
+
+
     }
 }
