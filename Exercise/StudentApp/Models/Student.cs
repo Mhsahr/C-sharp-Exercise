@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace StudentApp.Models
@@ -8,13 +9,14 @@ namespace StudentApp.Models
     {
         public float Score { get; set; }
 
-        public List<Student> Students { get; set; }
-
 
         public string AsCommaSeparated()
         {
 
             return $"{Id},{FirstName},{LastName},{Score}";
         }
+
+       
     }
+
 }
